@@ -1,0 +1,29 @@
+name: Build AutoType EXE
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pyinstaller
+
+      - name: Build EXE
+        run: pyinstaller --onefile --noconsole autotype.py
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v3
+        with:
+          name: autotype-exe
+          path: dist/autotype.exe
