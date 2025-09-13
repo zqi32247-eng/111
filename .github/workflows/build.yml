@@ -27,3 +27,4 @@ jobs:
         with:
           name: autotype-exe
           path: dist/autotype.exe
+          
