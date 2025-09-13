@@ -1,2 +1,6 @@
 pyautogui
 pyperclip
+pyautogui
+pypinyin
+pyperclip
+
