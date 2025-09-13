@@ -23,7 +23,7 @@ jobs:
         run: pyinstaller --onefile --noconsole autotype.py
 
       - name: Upload EXE
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: autotype-exe
           path: dist/autotype.exe
